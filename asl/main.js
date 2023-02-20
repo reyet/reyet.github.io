@@ -88,7 +88,7 @@ function init() {
     top.classList.add('keyboard');
     window.setTimeout(() => {
       search.scrollIntoViewIfNeeded();
-    }, 200);
+    }, 600);
   });
   search.addEventListener('blur', (e) => {
     top.classList.remove('keyboard');
