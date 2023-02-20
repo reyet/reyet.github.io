@@ -1,0 +1,89 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+}
+.one, .two {
+  position: relative;
+  flex-grow: 1;
+  width: 0;
+  height: 100%;
+  background: #000;
+  overflow: hidden;
+}
+#ytplayer {
+  width: 100%;
+  height: 100%;
+}
+  
+@media (orientation:portrait) {
+  .top {
+    flex-direction: column;
+  }
+  .one, .two {
+    width: 100%;
+  }
+  .two {
+    height: 0;
+  }
+  .one {
+    transition: height .2s;
+    height: 56vw;
+    flex-grow: 0;
+  }
+  .keyboard .one {
+    height: 0;
+  }
+}
+
+#search {
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 12px;
+  margin: 0;
+  background: #ccc;
+  border-radius: 0;
+  border: none;
+  height: 2em;
+  font-size: 20px;
+  font-family: monospace;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+}
+
+#results {
+  font-size: 20px;
+  font-family: monospace;
+  padding-top: 2em;
+  overflow-y: scroll;
+  box-sizing: border-box;
+  max-height: 100%;
+  width: 100%;
+  background: #eee;
+}
+#results a {
+  display: block;
+  padding: 2px 0 2px 12px;
+  text-decoration: none;
+  color: #000;
+  border-top: 1px dotted #888;
+}
+
+#results a.hilite {
+  background: #458;
+  color: #fff;
+}
