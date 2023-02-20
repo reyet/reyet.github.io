@@ -84,7 +84,12 @@ function init() {
   const search = get('search');
   const top = document.querySelector('.top');
   search.addEventListener('input', (e) => { searchFor(search.value); });
-  search.addEventListener('focus', (e) => { top.classList.add('keyboard'); });
+  search.addEventListener('focus', (e) => {
+    top.classList.add('keyboard');
+    window.setTimeout(() => {
+      search.scrollIntoViewIfNeeded();
+    }, 200);
+  });
   search.addEventListener('blur', (e) => {
     top.classList.remove('keyboard');
     window.setTimeout(() => {
